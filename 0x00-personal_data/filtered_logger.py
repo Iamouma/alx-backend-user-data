@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This handles personal data
+Module for handling Personal Data
 """
 from typing import List
 import re
@@ -14,9 +14,7 @@ PII_FIELDS = ("name", "email", "phone", "ssn", "password")
 
 def filter_datum(fields: List[str], redaction: str,
                  message: str, separator: str) -> str:
-    """
-    Returns a log message obfuscated
-    """
+    """ Returns a log message obfuscated """
     for f in fields:
         message = re.sub(f'{f}=.*?{separator}',
                          f'{f}={redaction}{separator}', message)
@@ -24,9 +22,7 @@ def filter_datum(fields: List[str], redaction: str,
 
 
 def get_logger() -> logging.Logger:
-    """
-    Returns a Logger Object
-    """
+    """ Returns a Logger Object """
     logger = logging.getLogger("user_data")
     logger.setLevel(logging.INFO)
     logger.propagate = False
@@ -38,10 +34,8 @@ def get_logger() -> logging.Logger:
     return logger
 
 
-def get_db() -> mysql.connector.connection.MySQLConncetion:
-    """
-    Returns a connector to a MySQL database
-    """
+def get_db() -> mysql.connector.connection.MySQLConnection:
+    """ Returns a connector to a MySQL database """
     username = environ.get("PERSONAL_DATA_DB_USERNAME", "root")
     password = environ.get("PERSONAL_DATA_DB_PASSWORD", "")
     host = environ.get("PERSONAL_DATA_DB_HOST", "localhost")
@@ -56,7 +50,7 @@ def get_db() -> mysql.connector.connection.MySQLConncetion:
 
 def main():
     """
-    This a database connection using get_db and retrieves all rows
+    Obtain a database connection using get_db and retrieves all rows
     in the users table and display each row under a filtered format
     """
     db = get_db()
