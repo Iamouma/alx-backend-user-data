@@ -1,4 +1,4 @@
-Toggle navigation
+### Toggle navigation
 Curriculum
 Short Specializations
 Average: 141.03%
