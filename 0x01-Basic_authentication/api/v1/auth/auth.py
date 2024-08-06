@@ -15,9 +15,10 @@ class Auth:
         if path is None or excluded_paths is None or excluded_paths == []:
             return True
 
-        # Check if the path matches any excluded path with a wildcard at the end
+        # Check if the path matches any excluded path with a wildcard
         for excluded_path in excluded_paths:
-            if excluded_path.endswith('*') and path.startswith(excluded_path[:-1]):
+            if excluded_path.endswith('*') and path.startswith(excluded_path
+                                                               [:-1]):
                 return False
 
         return True
