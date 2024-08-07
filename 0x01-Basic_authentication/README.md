@@ -1,4 +1,4 @@
-### Toggle navigation
+I'm### Toggle navigation
 Curriculum
 Short Specializations
 Average: 141.03%
@@ -16,7 +16,7 @@ In the industry, you should not implement your own Basic authentication system a
 
 
 
-Resources
+### Resources
 Read or watch:
 
 REST API Authentication Mechanisms
