@@ -1,8 +1,8 @@
-Toggle navigation
+### Toggle navigation
 Curriculum
 Short Specializations
 Average: 141.03%
-0x01. Basic authentication
+### 0x01. Basic authentication
 Back-end
 Authentification
  Weight: 1
