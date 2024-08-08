@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 
 class SessionDBAuth(SessionExpAuth):
     """SessionDBAuth class"""
-    
+
     def create_session(self, user_id=None):
         """Create session"""
         session_id = super().create_session(user_id)
@@ -28,12 +28,13 @@ class SessionDBAuth(SessionExpAuth):
         sessions = UserSession.search({"session_id": session_id})
         if not sessions:
             return None
-        
+
         session = sessions[0]
         if self.session_duration <= 0:
             return session.user_id
 
-        if session.created_at + timedelta(seconds=self.session_duration) < datetime.now():
+        if session.created_at + timedelta(seconds=self.
+                                          session_duration) < datetime.now():
             return None
 
         return session.user_id
@@ -45,13 +46,12 @@ class SessionDBAuth(SessionExpAuth):
         session_id = self.session_cookie(request)
         if not session_id:
             return False
-        
+
         UserSession.load_from_file()
         sessions = UserSession.search({"session_id": session_id})
         if not sessions:
             return False
-        
+
         session = sessions[0]
         session.remove()
         return True
-
