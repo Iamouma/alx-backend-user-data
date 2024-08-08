@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """ Module of Users views
 """
-from flask import abort, jsonify, request
-
 from api.v1.views import app_views
+from flask import abort, jsonify, request
 from models.user import User
 
 
@@ -28,24 +27,11 @@ def view_one_user(user_id: str = None) -> str:
     """
     if user_id is None:
         abort(404)
-    # If the user_id is "me" and there is no current_user, return a 404 error
-    if user_id == 'me':
-        if request.current_user is None:
-            abort(404)
-        else:
-            # If the user_id is "me" and there is a current_user, return the
-            # JSON representation of the current_user
-            return jsonify(request.current_user.to_json())
-    # If user_id is None, return a 404 error
-    if user_id is None:
+    if user_id == "me" and request.current_user is None:
         abort(404)
-    # Retrieve the user from the database using the User.get method
-    user = User.get(user_id)
-    # If the user was not found, return a 404 error
-    if user is None:
-        abort(404)
-    # Return the JSON representation of the user
-    return jsonify(user.to_json())
+    if user_id == "me" and request.current_user is not None:
+        user = request.current_user
+        return jsonify(user.to_json())
 
 
 @app_views.route('/users/<user_id>', methods=['DELETE'], strict_slashes=False)
@@ -135,3 +121,4 @@ def update_user(user_id: str = None) -> str:
         user.last_name = rj.get('last_name')
     user.save()
     return jsonify(user.to_json()), 200
+
