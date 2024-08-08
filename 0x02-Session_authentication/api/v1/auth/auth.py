@@ -2,8 +2,8 @@
 """
 Module for authentication
 """
+from os import getenv
 from typing import List, TypeVar
-
 from flask import request
 
 
