@@ -2,7 +2,7 @@ Toggle navigation
 Curriculum
 Short Specializations
 Average: 143.59%
-0x02. Session authentication
+### 0x02. Session authentication
 Back-end
 Authentification
  Weight: 1
