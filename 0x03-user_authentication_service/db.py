@@ -17,7 +17,7 @@ class DB:
     def __init__(self) -> None:
         """Initialize a new DB instance
         """
-        self._engine = create_engine("sqlite:///a.db", echo=True)
+        self._engine = create_engine("sqlite:///a.db", echo=False)
         Base.metadata.drop_all(self._engine)
         Base.metadata.create_all(self._engine)
         self.__session = None
@@ -41,7 +41,7 @@ class DB:
         return user
 
     def find_user_by(self, **kwargs) -> User:
-        """Find user by a given attribute
+        """Find a user by a given attribute
         """
         if not kwargs:
             raise InvalidRequestError
@@ -66,4 +66,4 @@ class DB:
                 raise ValueError
         for key, value in kwargs.items():
             setattr(user, key, value)
-        self.__session.commit()
+        self._session.commit()
