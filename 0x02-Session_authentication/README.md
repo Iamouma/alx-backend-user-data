@@ -1,8 +1,8 @@
-Toggle navigation
+## Toggle navigation
 Curriculum
 Short Specializations
 Average: 143.59%
-### 0x02. Session authentication
+## 0x02. Session authentication
 Back-end
 Authentification
  Weight: 1
@@ -10,11 +10,11 @@ Authentification
  Checker will be released at Aug 7, 2024 6:00 PM
  An auto review will be launched at the deadline
 Background Context
-In this project, you will implement a Session Authentication. You are not allowed to install any other module.
+## In this project, you will implement a Session Authentication. You are not allowed to install any other module.
 
 In the industry, you should not implement your own Session authentication system and use a module or framework that doing it for you (like in Python-Flask: Flask-HTTPAuth). Here, for the learning purpose, we will walk through each step of this mechanism to understand it by doing.
 
-Resources
+## Resources
 Read or watch:
 
 REST API Authentication Mechanisms - Only the session auth part
@@ -24,13 +24,13 @@ Flask Cookie
 Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-General
+## General
 What authentication means
 What session authentication means
 What Cookies are
 How to send Cookies
 How to parse Cookies
-Requirements
+## Requirements
 Python Scripts
 All your files will be interpreted/compiled on Ubuntu 18.04 LTS using python3 (version 3.7)
 All your files should end with a new line
@@ -44,7 +44,7 @@ All your classes should have a documentation (python3 -c 'print(__import__("my_m
 All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
 A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
 Tasks
-0. Et moi et moi et moi!
+### 0. Et moi et moi et moi!
 mandatory
 Copy all your work of the 0x06. Basic authentication project in this new folder.
 
@@ -136,7 +136,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x02-Session_authentication
 File: api/v1/app.py, api/v1/views/users.py
  
-1. Empty session
+### 1. Empty session
 mandatory
 Create a class SessionAuth that inherits from Auth. For the moment this class will be empty. It’s the first step for creating a new authentication mechanism:
 
@@ -181,7 +181,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x02-Session_authentication
 File: api/v1/auth/session_auth.py, api/v1/app.py
  
-2. Create a session
+### 2. Create a session
 mandatory
 Update SessionAuth class:
 
@@ -241,7 +241,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x02-Session_authentication
 File: api/v1/auth/session_auth.py
  
-3. User ID for Session ID
+### 3. User ID for Session ID
 mandatory
 Update SessionAuth class:
 
@@ -326,7 +326,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x02-Session_authentication
 File: api/v1/auth/session_auth.py
  
-4. Session cookie
+### 4. Session cookie
 mandatory
 Update api/v1/auth/auth.py by adding the method def session_cookie(self, request=None): that returns a cookie value from a request:
 
@@ -379,7 +379,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x02-Session_authentication
 File: api/v1/auth/auth.py
  
-5. Before request
+### 5. Before request
 mandatory
 Update the @app.before_request method in api/v1/app.py:
 
@@ -422,7 +422,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x02-Session_authentication
 File: api/v1/app.py
  
-6. Use Session ID for identifying a User
+### 6. Use Session ID for identifying a User
 mandatory
 Update SessionAuth class:
 
@@ -493,7 +493,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x02-Session_authentication
 File: api/v1/auth/session_auth.py
  
-7. New view for Session Authentication
+### 7. New view for Session Authentication
 mandatory
 Create a new Flask view that handles all routes for the Session authentication.
 
@@ -606,7 +606,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x02-Session_authentication
 File: api/v1/views/session_auth.py, api/v1/views/__init__.py
  
-8. Logout
+### 8. Logout
 mandatory
 Update the class SessionAuth by adding a new method def destroy_session(self, request=None): that deletes the user session / logout:
 
