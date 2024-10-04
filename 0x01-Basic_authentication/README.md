@@ -1,22 +1,22 @@
-I'm### Toggle navigation
+## Toggle navigation
 Curriculum
 Short Specializations
 Average: 141.03%
-### 0x01. Basic authentication
+## 0x01. Basic authentication
 Back-end
 Authentification
  Weight: 1
  Project will start Aug 5, 2024 6:00 AM, must end by Aug 7, 2024 6:00 AM
  Checker was released at Aug 5, 2024 6:00 PM
  An auto review will be launched at the deadline
-Background Context
+## Background Context
 In this project, you will learn what the authentication process means and implement a Basic Authentication on a simple API.
 
 In the industry, you should not implement your own Basic authentication system and use a module or framework that doing it for you (like in Python-Flask: Flask-HTTPAuth). Here, for the learning purpose, we will walk through each step of this mechanism to understand it by doing.
 
 
 
-### Resources
+## Resources
 Read or watch:
 
 REST API Authentication Mechanisms
@@ -27,13 +27,13 @@ Base64 - concept
 Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-General
+## General
 What authentication means
 What Base64 is
 How to encode a string in Base64
 What Basic authentication means
 How to send the Authorization header
-Requirements
+## Requirements
 Python Scripts
 All your files will be interpreted/compiled on Ubuntu 18.04 LTS using python3 (version 3.7)
 All your files should end with a new line
@@ -47,7 +47,7 @@ All your classes should have a documentation (python3 -c 'print(__import__("my_m
 All your functions (inside and outside a class) should have a documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
 A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
 Tasks
-0. Simple-basic-API
+### 0. Simple-basic-API
 mandatory
 Download and start your project from this archive.zip
 
@@ -87,7 +87,7 @@ Repo:
 GitHub repository: alx-backend-user-data
 Directory: 0x01-Basic_authentication
   
-1. Error handler: Unauthorized
+### 1. Error handler: Unauthorized
 mandatory
 What the HTTP status code for a request unauthorized? 401 of course!
 
@@ -142,7 +142,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x01-Basic_authentication
 File: api/v1/app.py, api/v1/views/index.py
   
-2. Error handler: Forbidden
+### 2. Error handler: Forbidden
 mandatory
 What the HTTP status code for a request where the user is authenticate but not allowed to access to a resource? 403 of course!
 
@@ -197,7 +197,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x01-Basic_authentication
 File: api/v1/app.py, api/v1/views/index.py
   
-3. Auth class
+### 3. Auth class
 mandatory
 Now you will create a class to manage the API authentication.
 
@@ -236,7 +236,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x01-Basic_authentication
 File: api/v1/auth, api/v1/auth/__init__.py, api/v1/auth/auth.py
   
-4. Define which routes don't need authentication
+### 4. Define which routes don't need authentication
 mandatory
 Update the method def require_auth(self, path: str, excluded_paths: List[str]) -> bool: in Auth that returns True if the path is not in the list of strings excluded_paths:
 
@@ -277,7 +277,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x01-Basic_authentication
 File: api/v1/auth/auth.py
   
-5. Request validation!
+### 5. Request validation!
 mandatory
 Now you will validate all requests to secure the API:
 
@@ -333,7 +333,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x01-Basic_authentication
 File: api/v1/app.py, api/v1/auth/auth.py
   
-6. Basic auth
+### 6. Basic auth
 mandatory
 Create a class BasicAuth that inherits from Auth. For the moment this class will be empty.
 
@@ -376,7 +376,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x01-Basic_authentication
 File: api/v1/app.py, api/v1/auth/basic_auth.py
   
-7. Basic - Base64 part
+### 7. Basic - Base64 part
 mandatory
 Add the method def extract_base64_authorization_header(self, authorization_header: str) -> str: in the class BasicAuth that returns the Base64 part of the Authorization header for a Basic Authentication:
 
@@ -417,7 +417,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x01-Basic_authentication
 File: api/v1/auth/basic_auth.py
   
-8. Basic - Base64 decode
+### 8. Basic - Base64 decode
 mandatory
 Add the method def decode_base64_authorization_header(self, base64_authorization_header: str) -> str: in the class BasicAuth that returns the decoded value of a Base64 string base64_authorization_header:
 
@@ -455,7 +455,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x01-Basic_authentication
 File: api/v1/auth/basic_auth.py
   
-9. Basic - User credentials
+### 9. Basic - User credentials
 mandatory
 Add the method def extract_user_credentials(self, decoded_base64_authorization_header: str) -> (str, str) in the class BasicAuth that returns the user email and password from the Base64 decoded value.
 
@@ -493,7 +493,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x01-Basic_authentication
 File: api/v1/auth/basic_auth.py
   
-10. Basic - User object
+### 10. Basic - User object
 mandatory
 Add the method def user_object_from_credentials(self, user_email: str, user_pwd: str) -> TypeVar('User'): in the class BasicAuth that returns the User instance based on his email and password.
 
@@ -555,7 +555,7 @@ GitHub repository: alx-backend-user-data
 Directory: 0x01-Basic_authentication
 File: api/v1/auth/basic_auth.py
   
-11. Basic - Overload current_user - and BOOM!
+### 11. Basic - Overload current_user - and BOOM!
 mandatory
 Now, you have all pieces for having a complete Basic authentication.
 
